@@ -3,7 +3,7 @@
 [![PyPI Version][pypi-image]][pypi-url] [![Docs Status][docs-image]][docs-url]
 
 This library provides tools to build bots that communicate with the Kik API.
-Find out more and create your bot at [dev.kik.com](dev-kik-url).
+Find out more and create your bot at [dev.kik.com][dev-kik-url].
 
 This package can be imported using pip by adding the following to your `requirements.txt`.
 
@@ -13,7 +13,7 @@ kik==<version>
 
 # Docs
 
-Our docs are available [on readthedocs](docs-url).
+Our docs are available [on readthedocs][docs-url].
 
 ## Contributing
 
