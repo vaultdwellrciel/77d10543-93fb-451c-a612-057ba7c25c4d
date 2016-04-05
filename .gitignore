@@ -1,0 +1,7 @@
+.DS_Store
+*.pyc
+.idea
+.coverage
+MANIFEST
+docs/build
+kik.egg-info/

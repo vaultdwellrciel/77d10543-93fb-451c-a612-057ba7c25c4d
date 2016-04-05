@@ -1,0 +1,12 @@
+[run]
+source = kik
+branch = True
+concurrency = multiprocessing
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:
