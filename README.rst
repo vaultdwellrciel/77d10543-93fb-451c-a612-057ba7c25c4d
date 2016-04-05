@@ -32,5 +32,5 @@ See `LICENSE.md <https://github.com/kikinteractive/kik-python/blob/master/LICENS
 .. |DocsImage| image:: https://readthedocs.org/projects/kik/badge/?version=latest
 .. _DocsImage: https://kik.readthedocs.org
 
-.. |PyPIImage| image::https://img.shields.io/pypi/v/kik.svg
+.. |PyPIImage| image:: https://img.shields.io/pypi/v/kik.svg
 .. _PyPIImage: https://pypi.python.org/pypi/kik
