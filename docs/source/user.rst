@@ -133,13 +133,13 @@ Messages are sent using :func:`KikApi.send_messages<kik.KikApi.send_messages>` f
    >>> from kik.messages import TextMessage
    >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
    >>> kik.send_messages([
-   >>>     TextMessage(
-   >>>         to='aleem',
-   >>>         chat_id='8c595a879e4140dbecb60f6c6933348bfd940cd9cbd6014e8fa51f24b5c8f74a',
-   >>>         body='Test'
-   >>>     )
-   >>> ])
-   >>> {}
+   ...     TextMessage(
+   ...         to='aleem',
+   ...         chat_id='8c595a879e4140dbecb60f6c6933348bfd940cd9cbd6014e8fa51f24b5c8f74a',
+   ...         body='Test'
+   ...     )
+   ... ])
+   {}
 
 Similarly, messages can be sent through the `broadcasting API <https://dev.kik.com/#/docs/messaging#broadcasting>`_,
 using :func:`KikApi.send_broadcast<kik.KikApi.send_broadcast>`.
@@ -148,13 +148,13 @@ using :func:`KikApi.send_broadcast<kik.KikApi.send_broadcast>`.
    >>> from kik.messages import TextMessage
    >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
    >>> kik.send_broadcast([
-   >>>     TextMessage(
-   >>>         to='aleem',
-   >>>         chat_id='8c595a879e4140dbecb60f6c6933348bfd940cd9cbd6014e8fa51f24b5c8f74a',
-   >>>         body='Test'
-   >>>     )
-   >>> ])
-   >>> {}
+   ...     TextMessage(
+   ...         to='aleem',
+   ...         chat_id='8c595a879e4140dbecb60f6c6933348bfd940cd9cbd6014e8fa51f24b5c8f74a',
+   ...         body='Test'
+   ...     )
+   ... ])
+   {}
 
 Messages are constructed using the :class:`Message<kik.messages.Message>` subclasses. in :mod:`kik.messages`.
 These classes directly mirror the `API message formats <https://dev.kik.com/#/docs/messaging#message-formats>`_, with
@@ -172,9 +172,9 @@ instance.
     >>> from kik.messages import CustomAttribution, LinkMessage
     >>> message = LinkMessage()
     >>> message.attribution = CustomAttribution(
-    >>>     name='A Name',
-    >>>     icon_url='http://foo.bar/anicon'
-    >>> )
+    ...     name='A Name',
+    ...     icon_url='http://foo.bar/anicon'
+    ... )
 
 Additionally, there are special attribution values to make a :class:`PictureMessage<kik.messages.PictureMessage>` or
 :class:`VideoMessage<kik.messages.VideoMessage>` appear to be from the camera or gallery.
@@ -199,15 +199,15 @@ Currently, the only supported keyboard types is
 of :class:`TextResponse<kik.messages.TextResponse>` instances.
 
    >>> from kik.messages import TextMessage, SuggestedResponseKeyboard, \
-   >>>     TextResponse
+   ...     TextResponse
    >>> message = TextMessage()
    >>> message.keyboards.append(
-   >>>     SuggestedResponseKeyboard(
-   >>>         to='aleem',
-   >>>         hidden=True,
-   >>>         responses=[TextResponse('OK')]
-   >>>     )
-   >>> )
+   ...     SuggestedResponseKeyboard(
+   ...         to='aleem',
+   ...         hidden=True,
+   ...         responses=[TextResponse('OK')]
+   ...     )
+   ... )
 
 Users
 -----
