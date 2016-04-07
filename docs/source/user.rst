@@ -35,7 +35,7 @@ Here is a minimal echo bot using Flask
     kik = KikApi(BOT_USERNAME, BOT_API_KEY)
 
 
-    @app.route('/receive', methods=['POST'])
+    @app.route('/incoming', methods=['POST'])
     def incoming():
         if not kik.verify_signature(request.headers.get('X-Kik-Signature'), request.get_data()):
             return Response(status=403)
