@@ -6,21 +6,21 @@ Kik Python API
 This library provides tools to build bots that communicate with the Kik API.
 Find out more and create your bot at `dev.kik.com <https://dev.kik.com>`_.
 
-This package can be imported using pip by adding the following to your ``requirements.txt``.::
+This package can be imported using pip by adding the following to your ``requirements.txt``::
 
     kik==<version>
 
 Docs
 ----
 
-Our docs are available `on readthedocs <https://kik.readthedocs.org>`_.
+Our docs are available on `readthedocs.org <https://kik.readthedocs.org>`_.
 
 Contributing
 ------------
 
 If you're looking to contribute the the `kik` package, check out the `Contributing Guide <https://github.com/kikinteractive/kik-python/blob/master/CONTRIBUTING.md>`_.
 
-This project adheres to the Contributor Covenant `code of conduct <https://github.com/kikinteractive/kik-python/blob/master/CODE_OF_CONDUCT.md>`_.
+This project adheres to the `Contributor Covenant Code of Conduct <https://github.com/kikinteractive/kik-python/blob/master/CODE_OF_CONDUCT.md>`_.
 By participating, you are expected to uphold this code. Please report unacceptable behavior to bots@kik.com.
 
 License
