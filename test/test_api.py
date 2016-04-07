@@ -33,7 +33,7 @@ class KikBotApiTest(TestCase):
 
         self.requests_mock.stop()
 
-    @mock.patch('requests.post', return_value=_response(200, json.dumps({})))
+    @mock.patch('requests.post', return_value=_response(200, json.dumps({}).encode('utf-8')))
     def test_send_messages(self, post):
         msgs = [TextMessage(to='aleem', body='Sometext')]
 
@@ -53,7 +53,7 @@ class KikBotApiTest(TestCase):
         })
         self.assertEqual(response, {})
 
-    @mock.patch('requests.post', return_value=_response(200, json.dumps({})))
+    @mock.patch('requests.post', return_value=_response(200, json.dumps({}).encode('utf-8')))
     def test_broadcast_messages(self, post):
         msgs = [TextMessage(to='aleem', body='Sometext')]
 
@@ -73,13 +73,13 @@ class KikBotApiTest(TestCase):
         })
         self.assertEqual(response, {})
 
-    @mock.patch('requests.post', return_value=_response(400, json.dumps({'error': 'BadRequest'})))
+    @mock.patch('requests.post', return_value=_response(400, json.dumps({'error': 'BadRequest'}).encode('utf-8')))
     def test_send_messages_failure(self, post):
         msgs = [TextMessage(to='aleem', body='Sometext')]
 
         self.assertRaises(KikError, self.api.send_messages, msgs)
 
-    @mock.patch('requests.post', return_value=_response(400, json.dumps({'error': 'BadRequest'})))
+    @mock.patch('requests.post', return_value=_response(400, json.dumps({'error': 'BadRequest'}).encode('utf-8')))
     def test_send_broadcast_failure(self, post):
         msgs = [TextMessage(to='aleem', body='Sometext')]
 
@@ -90,7 +90,7 @@ class KikBotApiTest(TestCase):
         'lastName': 'Last',
         'profilePicUrl': 'http://foo.bar/profile',
         'profilePicLastModified': 1458657367
-    })))
+    }).encode('utf-8')))
     def test_get_user_profile(self, get):
         user = self.api.get_user('aleem')
 
@@ -106,12 +106,12 @@ class KikBotApiTest(TestCase):
         self.assertEqual(user.profile_pic_url, 'http://foo.bar/profile')
         self.assertEqual(user.profile_pic_last_modified, 1458657367)
 
-    @mock.patch('requests.get', return_value=_response(400, json.dumps({'error': 'BadRequest'})))
+    @mock.patch('requests.get', return_value=_response(400, json.dumps({'error': 'BadRequest'}).encode('utf-8')))
     def test_get_user_profile_failure(self, get):
         self.assertRaises(KikError, self.api.get_user, 'aleem')
 
     @mock.patch('requests.post', return_value=_response(
-        200, json.dumps({'id': 'ba7a319394f912ccad1ac42770529bd5cb0e9783'})
+        200, json.dumps({'id': 'ba7a319394f912ccad1ac42770529bd5cb0e9783'}).encode('utf-8')
     ))
     def test_create_kik_code(self, post):
         code = self.api.create_code({'akey': 'avalue'})
@@ -130,7 +130,7 @@ class KikBotApiTest(TestCase):
         self.assertEqual(code.id, 'ba7a319394f912ccad1ac42770529bd5cb0e9783')
 
     @mock.patch('requests.post', return_value=_response(
-        200, json.dumps({'id': 'ba7a319394f912ccad1ac42770529bd5cb0e9783'})
+        200, json.dumps({'id': 'ba7a319394f912ccad1ac42770529bd5cb0e9783'}).encode('utf-8')
     ))
     def test_create_kik_code_no_data(self, post):
         code = self.api.create_code()
@@ -148,7 +148,7 @@ class KikBotApiTest(TestCase):
         self.assertIsInstance(code, Code)
         self.assertEqual(code.id, 'ba7a319394f912ccad1ac42770529bd5cb0e9783')
 
-    @mock.patch('requests.post', return_value=_response(400, json.dumps({'error': 'BadRequest'})))
+    @mock.patch('requests.post', return_value=_response(400, json.dumps({'error': 'BadRequest'}).encode('utf-8')))
     def test_create_kik_code_failure(self, post):
         self.assertRaises(KikError, self.api.create_code, {'akey': 'avalue'})
 
@@ -157,7 +157,7 @@ class KikBotApiTest(TestCase):
         'features': {
             'manuallySendReadReceipts': True
         }
-    })))
+    }).encode('utf-8')))
     def test_get_configuration(self, get):
         config = self.api.get_configuration()
 
@@ -170,7 +170,7 @@ class KikBotApiTest(TestCase):
         self.assertEqual(config.webhook, 'https://example.com/incoming')
         self.assertEqual(config.features, {'manuallySendReadReceipts': True})
 
-    @mock.patch('requests.post', return_value=_response(200, json.dumps({})))
+    @mock.patch('requests.post', return_value=_response(200, json.dumps({}).encode('utf-8')))
     def test_set_configuration(self, post):
         config = Configuration(
             webhook='https://example.com/incoming',

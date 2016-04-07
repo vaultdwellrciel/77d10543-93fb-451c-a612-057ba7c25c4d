@@ -64,9 +64,9 @@ class KikApi(object):
         )
 
         if response.status_code != 200:
-            raise KikError(response.content)
+            raise KikError(response.text)
 
-        return json.loads(response.content)
+        return response.json()
 
     def send_broadcast(self, messages):
         """
@@ -105,9 +105,9 @@ class KikApi(object):
         )
 
         if response.status_code != 200:
-            raise KikError(response.content)
+            raise KikError(response.text)
 
-        return json.loads(response.content)
+        return response.json()
 
     def get_user(self, username):
         """
@@ -134,9 +134,9 @@ class KikApi(object):
         )
 
         if response.status_code != 200:
-            raise KikError(response.content)
+            raise KikError(response.text)
 
-        content = json.loads(response.content)
+        content = response.json()
 
         return User.from_json(content)
 
@@ -173,9 +173,9 @@ class KikApi(object):
         )
 
         if response.status_code != 200:
-            raise KikError(response.content)
+            raise KikError(response.text)
 
-        content = json.loads(response.content)
+        content = response.json()
 
         return Code.from_json(content)
 
@@ -200,9 +200,9 @@ class KikApi(object):
         )
 
         if response.status_code != 200:
-            raise KikError(response.content)
+            raise KikError(response.text)
 
-        content = json.loads(response.content)
+        content = response.json()
 
         return Configuration.from_json(content)
 
@@ -234,9 +234,9 @@ class KikApi(object):
         )
 
         if response.status_code != 200:
-            raise KikError(response.content)
+            raise KikError(response.text)
 
-        return json.loads(response.content)
+        return response.json()
 
     def verify_signature(self, signature, body):
         """
