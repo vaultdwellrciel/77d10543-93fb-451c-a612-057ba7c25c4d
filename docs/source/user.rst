@@ -82,7 +82,7 @@ functions.
   >>> config.webhook
   'https://example.com/incoming'
 
-:func:`KikApi.get_configuration<kik.KikApi.get_configuration>` sets your bot's configuration, taking a
+:func:`KikApi.set_configuration<kik.KikApi.set_configuration>` sets your bot's configuration, taking a
 :class:`Configuration<kik.Configuration>` object.
 
   >>> from kik import KikApi, Configuration
