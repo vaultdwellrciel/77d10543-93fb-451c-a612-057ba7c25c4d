@@ -8,6 +8,8 @@ dependencies:
 	pip install --upgrade --requirement requirements.txt
 
 test: dependencies lint
+	python setup.py check
+	check-manifest
 	python -m unittest discover -v -t . -s test
 
 coverage:

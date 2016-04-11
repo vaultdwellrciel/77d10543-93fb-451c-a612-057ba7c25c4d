@@ -1,5 +1,8 @@
 # Release History
 
+## v.1.0.5
+- Fix installation error due to missing README
+
 ## v1.0.4
 - Bugfix for Python 3 support
 - Updated README
