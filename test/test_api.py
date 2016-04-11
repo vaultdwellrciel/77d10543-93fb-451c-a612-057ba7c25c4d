@@ -179,19 +179,16 @@ class KikBotApiTest(TestCase):
 
         response = self.api.set_configuration(config)
 
-        post.assert_called_once_with(
-            'https://api.kik.com/v1/config',
-            timeout=60,
-            auth=('mybotusername', 'mybotapikey'),
-            headers={
-                'Content-Type': 'application/json'
-            },
-            data=json.dumps({
-                'webhook': 'https://example.com/incoming',
-                'features': {
-                    'manuallySendReadReceipts': True
-                }
-            })
-        )
+        self.assertEqual(post.call_count, 1)
+        self.assertEqual(post.call_args[0][0], 'https://api.kik.com/v1/config')
+        self.assertEqual(post.call_args[1]['timeout'], 60)
+        self.assertEqual(post.call_args[1]['auth'], ('mybotusername', 'mybotapikey'))
+        self.assertEqual(post.call_args[1]['headers'], {'Content-Type': 'application/json'})
+        self.assertEqual(json.loads(post.call_args[1]['data']), {
+            'webhook': 'https://example.com/incoming',
+            'features': {
+                'manuallySendReadReceipts': True
+            }
+        })
 
         self.assertEqual(response, {})
