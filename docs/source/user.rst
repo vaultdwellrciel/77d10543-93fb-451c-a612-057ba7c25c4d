@@ -28,12 +28,13 @@ Here is a minimal echo bot using Flask
 
     from flask import Flask, request, Response
 
-    from kik import KikApi
+    from kik import KikApi, Configuration
     from kik.messages import messages_from_json, TextMessage
 
     app = Flask(__name__)
     kik = KikApi(BOT_USERNAME, BOT_API_KEY)
 
+    kik.set_configuration(Configuration(webhook=YOUR_WEBHOOK))
 
     @app.route('/incoming', methods=['POST'])
     def incoming():

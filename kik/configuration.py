@@ -12,6 +12,8 @@ class Configuration(Resource):
     """
     def __init__(self, webhook, features=None):
         self.webhook = webhook
+        if features is None:
+            features = {}
         self.features = features
 
     @classmethod
