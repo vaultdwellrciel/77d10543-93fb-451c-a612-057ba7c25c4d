@@ -26,3 +26,13 @@ class KikCodeTest(TestCase):
                 'manuallySendReadReceipts': True
             }
         })
+
+    def test_to_json_no_features(self):
+        config = Configuration(
+            webhook='https://mybot.com/incoming'
+        )
+
+        self.assertEqual(config.to_json(), {
+            'webhook': 'https://mybot.com/incoming',
+            'features': {}
+        })

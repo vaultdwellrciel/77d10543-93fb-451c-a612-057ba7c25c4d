@@ -1,5 +1,9 @@
 # Release History
 
+## v.1.0.6
+- Bugfix for setting configurations with no features
+- Added configuration to the example bot
+
 ## v.1.0.5
 - Fix installation error due to missing README
 
