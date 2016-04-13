@@ -18,8 +18,8 @@ or add the following line to your project's requirements.txt file:
 
     kik==\ |version|
 
-Example Server
---------------
+Example Bot
+-----------
 
 Here is a minimal echo bot using Flask
 
