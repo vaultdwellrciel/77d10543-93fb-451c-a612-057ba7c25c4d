@@ -52,7 +52,7 @@ Here is a minimal echo bot using Flask
                     )
                 ])
 
-            return Response(status=200)
+        return Response(status=200)
 
 
     if __name__ == "__main__":
