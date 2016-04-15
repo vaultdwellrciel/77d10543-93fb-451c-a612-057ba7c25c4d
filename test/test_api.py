@@ -170,7 +170,12 @@ class KikBotApiTest(TestCase):
         self.assertEqual(config.webhook, 'https://example.com/incoming')
         self.assertEqual(config.features, {'manuallySendReadReceipts': True})
 
-    @mock.patch('requests.post', return_value=_response(200, json.dumps({}).encode('utf-8')))
+    @mock.patch('requests.post', return_value=_response(200, json.dumps({
+        'webhook': 'https://example.com/incoming',
+        'features': {
+            'manuallySendReadReceipts': True
+        }
+    }).encode('utf-8')))
     def test_set_configuration(self, post):
         config = Configuration(
             webhook='https://example.com/incoming',
@@ -191,4 +196,6 @@ class KikBotApiTest(TestCase):
             }
         })
 
-        self.assertEqual(response, {})
+        self.assertIsInstance(response, Configuration)
+        self.assertEqual(response.webhook, 'https://example.com/incoming')
+        self.assertEqual(response.features, {'manuallySendReadReceipts': True})

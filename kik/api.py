@@ -236,7 +236,7 @@ class KikApi(object):
         if response.status_code != 200:
             raise KikError(response.text)
 
-        return response.json()
+        return Configuration.from_json(response.json())
 
     def verify_signature(self, signature, body):
         """
