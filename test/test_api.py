@@ -194,5 +194,5 @@ class KikBotApiTest(TestCase):
         self.assertEqual(response, {})
 
     def test_verify_signature(self):
-        self.assertTrue(self.api.verify_signature('AC18D0105C2C257652859322B0499313342C6EB9', 'body'))
-        self.assertFalse(self.api.verify_signature('fakesig', 'body'))
+        self.assertTrue(self.api.verify_signature('AC18D0105C2C257652859322B0499313342C6EB9', b'body'))
+        self.assertFalse(self.api.verify_signature('fakesig', b'body'))
