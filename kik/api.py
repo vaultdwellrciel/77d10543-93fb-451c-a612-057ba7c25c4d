@@ -244,4 +244,8 @@ class KikApi(object):
         For more on signatures see `<https://dev.kik.com/#/docs/messaging#receiving-messages>`_.
         To see this in action, see app.py
         """
-        return signature == base64.b16encode(hmac.new(str(self.api_key), body, hashlib.sha1).digest())
+
+        valid_sig = base64.b16encode(
+            hmac.new(self.api_key.encode('utf-8'), body.encode('utf-8'), hashlib.sha1).digest()).decode('utf-8')
+
+        return signature == valid_sig
