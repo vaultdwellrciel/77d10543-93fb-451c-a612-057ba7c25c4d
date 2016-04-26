@@ -242,6 +242,10 @@ class KikApi(object):
         """
         Verifies that a request body correctly matches the header signature.
         For more on signatures see `<https://dev.kik.com/#/docs/messaging#receiving-messages>`_.
-        To see this in action, see app.py
+
+        In Python 3, `body` must be a bytestring
         """
-        return signature == base64.b16encode(hmac.new(str(self.api_key), body, hashlib.sha1).digest())
+
+        expected = base64.b16encode(hmac.new(self.api_key.encode('utf-8'), body, hashlib.sha1).digest()).decode('utf-8')
+
+        return signature == expected

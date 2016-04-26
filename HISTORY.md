@@ -1,5 +1,8 @@
 # Release History
 
+## v.1.0.7
+- Bugfix for KikApi.verify_signature in Python 3
+
 ## v.1.0.6
 - Bugfix for setting configurations with no features
 - Added configuration to the example bot
