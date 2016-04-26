@@ -90,7 +90,7 @@ functions.
   >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
   >>> config = Configuration(webhook='https://example.com/incoming')
   >>> kik.set_configuration(config)
-  {}
+  <kik.Configuration>
 
 Receiving Messages
 ------------------

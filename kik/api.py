@@ -212,8 +212,9 @@ class KikApi(object):
 
         :param config: A :class:`Configuration<kik.Configuration>` containing your bot's new configuration
         :type config: kik.Configuration
-        :returns: A dict containing the response from the API.
-        :rtype: dict
+        :returns: A :class:`Configuration<kik.Configuration>` containing your bot's new configuration, as confirmed by
+        the server
+        :rtype: kik.Configuration
 
         Usage:
 
@@ -221,7 +222,7 @@ class KikApi(object):
         >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
         >>> config = Configuration(webhook='https://example.com/incoming')
         >>> kik.set_configuration(config)
-        {}
+        <kik.Configuration>
         """
         response = requests.post(
             ROOT_URL.format('/v1/config'),
@@ -236,7 +237,7 @@ class KikApi(object):
         if response.status_code != 200:
             raise KikError(response.text)
 
-        return response.json()
+        return Configuration.from_json(response.json())
 
     def verify_signature(self, signature, body):
         """
