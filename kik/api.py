@@ -246,7 +246,6 @@ class KikApi(object):
         In Python 3, `body` must be a bytestring
         """
 
-        valid_sig = base64.b16encode(
-            hmac.new(self.api_key.encode('utf-8'), body, hashlib.sha1).digest()).decode('utf-8')
+        expected = base64.b16encode(hmac.new(self.api_key.encode('utf-8'), body, hashlib.sha1).digest()).decode('utf-8')
 
-        return signature == valid_sig
+        return signature == expected
