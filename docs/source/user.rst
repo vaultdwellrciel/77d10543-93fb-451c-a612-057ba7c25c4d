@@ -53,7 +53,7 @@ Here is a minimal echo bot using Flask
                     )
                 ])
 
-            return Response(status=200)
+        return Response(status=200)
 
 
     if __name__ == "__main__":
@@ -90,7 +90,7 @@ functions.
   >>> kik = KikApi(BOT_USERNAME, BOT_API_KEY)
   >>> config = Configuration(webhook='https://example.com/incoming')
   >>> kik.set_configuration(config)
-  {}
+  <kik.Configuration>
 
 Receiving Messages
 ------------------
