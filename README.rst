@@ -13,7 +13,7 @@ This package can be imported using pip by adding the following to your ``require
 Docs
 ----
 
-Our docs are available on `readthedocs.org <https://kik.readthedocs.org>`_.
+Our docs are available on `readthedocs.io <https://kik.readthedocs.io>`_.
 
 Contributing
 ------------
@@ -30,7 +30,7 @@ The kik library is released under the terms of the MIT license.
 See `LICENSE.md <https://github.com/kikinteractive/kik-python/blob/master/LICENSE.md>`_ for more information or see https://opensource.org/licenses/MIT.
 
 .. |DocsImage| image:: https://readthedocs.org/projects/kik/badge/?version=latest
-.. _DocsImage: https://kik.readthedocs.org
+.. _DocsImage: https://kik.readthedocs.io
 
 .. |PyPIImage| image:: https://img.shields.io/pypi/v/kik.svg
 .. _PyPIImage: https://pypi.python.org/pypi/kik
